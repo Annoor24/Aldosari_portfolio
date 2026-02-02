@@ -1,0 +1,1273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abduljalil Musa | Community Manager</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* CSS Variables for Theming */
+      :root {
+        --primary-color: #4a6cf7;
+        --secondary-color: #6f42c1;
+        --dark-color: #1d2144;
+        --light-color: #f8f9fa;
+        --success-color: #28a745;
+        --danger-color: #dc3545;
+        --text-dark: #333;
+        --text-light: #f4f4f4;
+        --bg-color: #fff;
+        --card-bg: #fff;
+        --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+      }
+
+      /* Dark Mode */
+      .dark-mode {
+        --bg-color: #121212;
+        background: radial-gradient(circle at 50% 50%, #2a2e52 0%, #151515 100%); /* Add depth to background */
+        --text-dark: #f4f4f4;
+        --text-light: #333;
+        --card-bg: #1e1e1e;
+        --shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px; /* Fix for anchor links landing under header */
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.8;
+        background-color: var(--bg-color);
+        color: var(--text-dark);
+        transition: var(--transition);
+        padding-top: 80px; /* Prevent fixed header from covering content */
+      }
+      
+      p {
+        margin-bottom: 20px; /* Increased paragraph spacing */
+      }
+
+      /* Scroll Animation Classes */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--primary-color);
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      .section {
+        padding: 80px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70px;
+        height: 4px;
+        background: var(--primary-color);
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background: var(--primary-color);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .btn:hover {
+        background: var(--secondary-color);
+        transform: translateY(-3px);
+      }
+
+      /* Header & Navigation */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: var(--bg-color);
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--primary-color);
+      }
+
+      .nav-menu {
+        display: flex;
+      }
+
+      .nav-menu li {
+        margin: 0 15px;
+      }
+
+      .nav-link {
+        color: var(--text-dark);
+        font-weight: 500;
+        transition: var(--transition);
+      }
+
+      .nav-link:hover {
+        color: var(--primary-color);
+      }
+
+      .theme-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: var(--text-dark);
+        margin-left: 20px;
+      }
+
+      .hamburger {
+        display: none;
+        cursor: pointer;
+      }
+
+      .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: var(--text-dark);
+        transition: var(--transition);
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh; /* Allow content to grow if needed */
+        display: flex;
+        align-items: center;
+        background: linear-gradient(
+          135deg,
+          rgba(74, 108, 247, 0.1) 0%,
+          rgba(111, 66, 193, 0.1) 100%
+        );
+      }
+
+      .hero-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .hero-text {
+        flex: 1;
+        padding-right: 30px;
+      }
+
+      .hero-text h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .hero-text p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        color: #666;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+      }
+
+      .btn-outline {
+        background: transparent;
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+      }
+
+      .btn-outline:hover {
+        background: var(--primary-color);
+        color: #fff;
+      }
+
+      .hero-image {
+        flex: 1;
+        text-align: center;
+      }
+
+      .hero-img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid var(--primary-color);
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .hero-img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(74, 108, 247, 0.4);
+      }
+
+      /* About Section */
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+      }
+
+      .about-image img {
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease;
+      }
+
+      .about-image img:hover {
+        transform: scale(1.03) rotate(1deg);
+      }
+
+      .about-text h3 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .about-text p {
+        margin-bottom: 15px;
+      }
+
+      .info-list {
+        margin-top: 20px;
+      }
+
+      .info-item {
+        display: flex;
+        margin-bottom: 10px;
+      }
+
+      .info-item strong {
+        min-width: 100px;
+      }
+
+      /* Skills Section */
+      .skills-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .skill-item {
+        background: var(--card-bg);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .skill-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .skill-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .skill-icon {
+        font-size: 2rem;
+        color: var(--primary-color);
+        margin-right: 15px;
+      }
+
+      .skill-title {
+        font-size: 1.5rem;
+      }
+
+      .skill-bar {
+        height: 10px;
+        background: #e9ecef;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      .skill-progress {
+        height: 100%;
+        background: var(--primary-color);
+        border-radius: 5px;
+        position: relative;
+        width: 0;
+        transition: width 1s ease;
+      }
+
+      .skill-percent {
+        position: absolute;
+        right: 0;
+        top: -25px;
+        font-weight: 600;
+      }
+
+      /* Projects Section */
+      .projects-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+      }
+
+      .project-card {
+        background: var(--card-bg);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .project-img {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .project-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .project-card:hover .project-img img {
+        transform: scale(1.1);
+      }
+
+      .project-content {
+        padding: 20px;
+      }
+
+      .project-title {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      .project-desc {
+        margin-bottom: 15px;
+        color: #666;
+      }
+
+      .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+      }
+
+      .tech-tag {
+        background: var(--primary-color);
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        margin-right: 8px;
+        margin-bottom: 8px;
+      }
+
+      .project-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .project-link {
+        display: flex;
+        align-items: center;
+        color: var(--primary-color);
+        font-weight: 500;
+      }
+
+      .project-link i {
+        margin-right: 5px;
+      }
+
+      /* Contact Section */
+      .contact-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+      }
+
+      .contact-info {
+        margin-bottom: 30px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .contact-icon {
+        width: 50px;
+        height: 50px;
+        background: var(--primary-color);
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        font-size: 1.2rem;
+      }
+
+      .contact-details h4 {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+      }
+
+      .contact-form {
+        background: var(--card-bg);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-family: inherit;
+        font-size: 1rem;
+        background: var(--bg-color);
+        color: var(--text-dark);
+        transition: var(--transition);
+      }
+
+      .form-control:focus {
+        border-color: var(--primary-color);
+        outline: none;
+      }
+
+      textarea.form-control {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .form-btn {
+        width: 100%;
+      }
+
+      .alert {
+        padding: 12px 15px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        display: none;
+      }
+
+      .alert-success {
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+      }
+
+      .alert-error {
+        background: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--dark-color);
+        color: #fff;
+        padding: 50px 0 20px;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .footer-col h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .footer-col h3::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background: var(--primary-color);
+      }
+
+      .footer-col p {
+        margin-bottom: 15px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-link {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+      }
+
+      .social-link:hover {
+        background: var(--primary-color);
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links a {
+        color: #ddd;
+        transition: var(--transition);
+      }
+
+      .footer-links a:hover {
+        color: var(--primary-color);
+        padding-left: 5px;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 30px;
+        margin-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Back to Top */
+      .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: var(--primary-color);
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        box-shadow: var(--shadow);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 999;
+      }
+
+      .back-to-top.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        .hero-content {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .hero-text {
+          padding-right: 0;
+          margin-bottom: 40px;
+        }
+
+        .about-content {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-container {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hamburger {
+          display: block;
+          z-index: 101;
+        }
+
+        .hamburger.active .bar:nth-child(2) {
+          opacity: 0;
+        }
+
+        .hamburger.active .bar:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.active .bar:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .nav-menu {
+          position: fixed;
+          left: -100%;
+          top: 0;
+          flex-direction: column;
+          background: var(--bg-color);
+          width: 100%;
+          height: 100vh;
+          text-align: center;
+          padding-top: 100px;
+          transition: var(--transition);
+          box-shadow: var(--shadow);
+        }
+
+        .nav-menu.active {
+          left: 0;
+        }
+
+        .nav-menu li {
+          margin: 15px 0;
+        }
+
+        .nav-link {
+          font-size: 1.2rem;
+        }
+
+        .hero-text h1 {
+          font-size: 2.5rem;
+        }
+
+        .section-title h2 {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .hero-buttons {
+          flex-direction: column;
+        }
+
+        .hero-img {
+          width: 250px;
+          height: 250px;
+        }
+
+        .projects-container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header & Navigation -->
+    <header>
+      <div class="container nav-container">
+        <a href="#" class="logo">Abduljalil Musa</a>
+
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Experience</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <button class="theme-toggle" id="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </button>
+
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero reveal" id="home">
+      <div class="container hero-content">
+        <div class="hero-text reveal">
+          <h1>Hi, I'm Abduljalil Musa<br />Community Manager &<br />Blockchain Developer</h1>
+          <p>
+            A resourceful community manager and blockchain developer proficient at collaborating with
+            investors to develop growth strategies and building decentralized applications
+            on Cardano (Aiken) and Ethereum (Solidity).
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn">View My Work</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img
+            src="images/profile.jpg"
+            alt="Portrait of Abduljalil Musa"
+            class="hero-img"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section reveal" id="about">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>About Me</h2>
+        </div>
+
+        <div class="about-content">
+          <div class="about-image">
+            <img
+              src="images/profile.jpg"
+              alt="Abduljalil Musa"
+            />
+          </div>
+          <div class="about-text">
+            <h3>
+              A dedicated community manager with a passion for innovative
+              solutions
+            </h3>
+            <p>
+              Hello! I'm Abduljalil, a resourceful community manager and blockchain developer proficient
+              at collaborating with multiple investors to determine audience
+              interests and develop strategy towards the growth of a project. I also specialize in 
+              building smart contracts using Aiken (Cardano) and Solidity (Ethereum), alongside
+              developing market communication plans that align with business priorities.
+            </p>
+            <p>
+              My goal is to build thriving communities and drive growth through
+              strategic engagement and innovative communication strategies.
+            </p>
+
+            <div class="info-list">
+              <div class="info-item">
+                <strong>Name:</strong>
+                <span>Abduljalil Musa</span>
+              </div>
+              <div class="info-item">
+                <strong>Email:</strong>
+                <span>musaabduljalil15@gmail.com</span>
+              </div>
+              <div class="info-item">
+                <strong>Phone:</strong>
+                <span>08052354292</span>
+              </div>
+              <div class="info-item">
+                <strong>Location:</strong>
+                <span>Abuja,Nigeria</span>
+              </div>
+              <div class="info-item">
+                <strong>Interests:</strong>
+                <span>Blogging, Programming, Studying, Blockchain Research</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section reveal" id="skills">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>My Skills</h2>
+          <p>Technologies I work with</p>
+        </div>
+
+        <div class="skills-container">
+          <div class="skill-item">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <i class="fas fa-link"></i>
+              </div>
+              <h3 class="skill-title">Blockchain Development</h3>
+            </div>
+            <p>Building smart contracts and DApps on Cardano (Aiken) and Ethereum (Solidity).</p>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3 class="skill-title">Community Management</h3>
+            </div>
+            <p>Proficient at collaborating with investors and developing growth strategies.</p>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <i class="fab fa-bitcoin"></i>
+              </div>
+              <h3 class="skill-title">Crypto trading</h3>
+            </div>
+            <p>Experience in navigating cryptocurrency markets and trading.</p>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <i class="fas fa-keyboard"></i>
+              </div>
+              <h3 class="skill-title">Data Entry</h3>
+            </div>
+            <p>Skilled in accurate data input and management.</p>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3 class="skill-title">Digital Marketing</h3>
+            </div>
+            <p>Developing effective and targeted marketing campaigns.</p>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <h3 class="skill-title">Computer Tech</h3>
+            </div>
+            <p>Proficient in various computer technologies and technical troubleshooting.</p>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <i class="fas fa-pen-nib"></i>
+              </div>
+              <h3 class="skill-title">Content Creation</h3>
+            </div>
+            <p>Creating engaging content for various platforms and audiences.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section class="section reveal" id="projects">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>Work Experience</h2>
+          <p>My professional journey</p>
+        </div>
+
+        <div class="projects-container">
+          <div class="project-card">
+            <div class="project-content">
+              <h3 class="project-title">Community Manager</h3>
+              <p class="project-subtitle" style="color: var(--primary-color); font-weight: 600;">Jose Matos</p>
+              <p class="project-date" style="font-size: 0.9rem; color: #777;">01/2021 - 03/2021 | UK</p>
+              <p class="project-desc">I bring creative deadline-driven and enthusiastic mindset to this role. I have maintained a high-paced performing work environment while managing Dobmoovs project communities.</p>
+            </div>
+          </div>
+          
+          <div class="project-card">
+            <div class="project-content">
+              <h3 class="project-title">Community Engagement Manager</h3>
+              <p class="project-subtitle" style="color: var(--primary-color); font-weight: 600;">Cryptoworks Online</p>
+              <p class="project-date" style="font-size: 0.9rem; color: #777;">11/2021 - 05/2022 | Mumbai, India</p>
+              <p class="project-desc">Responsible for community engagement on both telegram and discord for numerous project communities, 12 hours daily services in developing a project.</p>
+            </div>
+          </div>
+          
+          <div class="project-card">
+            <div class="project-content">
+              <h3 class="project-title">Moderator</h3>
+              <p class="project-subtitle" style="color: var(--primary-color); font-weight: 600;">AgroNFT Marketplace</p>
+              <p class="project-date" style="font-size: 0.9rem; color: #777;">12/2021 - 04/2022 | Paris, France</p>
+              <p class="project-desc">I have developed and maintained a good client relationship. Confidently reassuring client's safety in a community. 100% active and detailed response to discord tickets, Telegram and discord moderation. Successfully on-boarded thousands of members to project communities.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section class="section reveal" id="contact">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>Contact Me</h2>
+          <p>Get in touch</p>
+        </div>
+
+        <div class="contact-container">
+          <div class="contact-info">
+            <h3>Let's talk about your project</h3>
+            <p>
+              Feel free to reach out if you're looking for a developer, have a
+              question, or just want to connect.
+            </p>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Location</h4>
+                <p>Abuja, Federal Capital Territory, Nigeria</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Email</h4>
+                <p>musaabduljalil15@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Phone</h4>
+                <p>08052354292</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <div class="alert alert-success" id="success-alert">
+              Your message has been sent successfully!
+            </div>
+
+            <div class="alert alert-error" id="error-alert">
+              Something went wrong. Please try again.
+            </div>
+
+            <form action="https://formsubmit.co/kabirnuruddin24@gmail.com" method="POST">
+              <!-- internal spam protection -->
+              <input type="text" name="_honey" style="display:none">
+              <!-- disable captcha -->
+              <input type="hidden" name="_captcha" value="false">
+              <!-- CC secondary email -->
+              <input type="hidden" name="_cc" value="musaabduljalil15@gmail.com">
+              
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Your Name"
+                  id="name"
+                  name="name"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Your Email"
+                  id="email"
+                  name="email"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Subject"
+                  id="subject"
+                  name="subject"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <textarea
+                  class="form-control"
+                  placeholder="Your Message"
+                  id="message"
+                  name="message"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn form-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-col">
+            <h3>Abduljalil Musa</h3>
+            <p>
+              A passionate community manager and blockchain developer creating thriving digital
+              environments and innovative decentralized solutions.
+            </p>
+            <div class="social-links">
+              <a href="https://x.com/fav_akhee?s=21" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="https://wa.me/2348052354292" class="social-link"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#projects">Experience</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Services</h3>
+            <ul class="footer-links">
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">UI/UX Design</a></li>
+              <li><a href="#">Frontend Development</a></li>
+              <li><a href="#">Backend Development</a></li>
+              <li><a href="#">Full-Stack Development</a></li>
+              <li><a href="#">Blockchain Development</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>© 2026 Abduljalil Musa. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+      // DOM Content Loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", function () {
+          hamburger.classList.toggle("active");
+          navMenu.classList.toggle("active");
+        });
+
+        // Close mobile menu when clicking on a nav link
+        document.querySelectorAll(".nav-link").forEach((link) => {
+          link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+          });
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById("theme-toggle");
+        const themeIcon = themeToggle.querySelector("i");
+
+        // Check for saved theme preference or respect OS preference
+        if (
+          localStorage.getItem("theme") === "dark" ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches &&
+            !localStorage.getItem("theme"))
+        ) {
+          document.body.classList.add("dark-mode");
+          themeIcon.classList.replace("fa-moon", "fa-sun");
+        }
+
+        themeToggle.addEventListener("click", () => {
+          document.body.classList.toggle("dark-mode");
+
+          if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+            themeIcon.classList.replace("fa-moon", "fa-sun");
+          } else {
+            localStorage.setItem("theme", "light");
+            themeIcon.classList.replace("fa-sun", "fa-moon");
+          }
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById("backToTop");
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 300) {
+            backToTopButton.classList.add("active");
+          } else {
+            backToTopButton.classList.remove("active");
+          }
+        });
+
+        backToTopButton.addEventListener("click", (e) => {
+          e.preventDefault();
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+
+        // Scroll Animations
+        function reveal() {
+          var reveals = document.querySelectorAll(".reveal");
+
+          for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 50; /* Reduced threshold to make content appear sooner */
+
+            if (elementTop < windowHeight - elementVisible) {
+              reveals[i].classList.add("active");
+            }
+          }
+        }
+
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        reveal();
+
+        const skillBars = document.querySelectorAll(".skill-progress");
+
+        function animateSkillBars() {
+          skillBars.forEach((bar) => {
+            const width = bar.getAttribute("data-width");
+            if (isElementInViewport(bar)) {
+              bar.style.width = width;
+            }
+          });
+        }
+
+        function isElementInViewport(el) {
+          const rect = el.getBoundingClientRect();
+          return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <=
+              (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <=
+              (window.innerWidth || document.documentElement.clientWidth)
+          );
+        }
+
+        // Initial check and then on scroll
+        animateSkillBars();
+        window.addEventListener("scroll", animateSkillBars);
+
+
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              const headerHeight =
+                document.querySelector("header").offsetHeight;
+              const targetPosition =
+                targetElement.getBoundingClientRect().top +
+                window.pageYOffset -
+                headerHeight;
+
+              window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
